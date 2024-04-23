@@ -64,26 +64,42 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('click',activate,false);
 
     // Back to top button
-    window.addEventListener("scroll", function () {
-        var backToTop = document.querySelector('.back-to-top');
-        if (window.scrollY > 300) {
-            backToTop.style.display = "block";
-        } else {
-            backToTop.style.display = "none";
-        }
-    });
+    // window.addEventListener("scroll", function () {
+    //     var backToTop = document.querySelector('.back-to-top');
+    //     if (window.scrollY > 300) {
+    //         backToTop.style.display = "block";
+    //     } else {
+    //         backToTop.style.display = "none";
+    //     }
+    // });
 
-    document.querySelector('.back-to-top').addEventListener("click", function () {
-        var scrollDuration = 1500;
-        var scrollStep = -window.scrollY / (scrollDuration / 15);
-        var scrollInterval = setInterval(function () {
-            if (window.scrollY !== 0) {
-                window.scrollBy(0, scrollStep);
-            } else {
-                clearInterval(scrollInterval);
-            }
-        }, 15);
-    });
+    // document.querySelector('.back-to-top').addEventListener("click", function () {
+    //     var scrollDuration = 1500;
+    //     var scrollStep = -window.scrollY / (scrollDuration / 15);
+    //     var scrollInterval = setInterval(function () {
+    //         if (window.scrollY !== 0) {
+    //             window.scrollBy(0, scrollStep);
+    //         } else {
+    //             clearInterval(scrollInterval);
+    //         }
+    //     }, 15);
+    // });
+    let scrollButton =document.querySelector(".back-to-top")
+    window.addEventListener("scroll", function() {
+        if (window.scrollY >= 700) {
+            scrollButton.style.display = "block"
+        } else {
+            scrollButton.style.display = "none"
+    
+        }
+    })
+    scrollButton.addEventListener("click", function(e) {
+        window.scrollTo({
+            left:0,
+            top : 0,
+            behavior : "smooth"
+        })
+    })
     
         // Select the testimonial carousel container
         var testimonialCarousel = document.querySelector(".testimonial-carousel");
