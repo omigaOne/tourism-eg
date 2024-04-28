@@ -444,9 +444,9 @@
     background: var(--primary);
 }
 
-.service-item * {
+/* .service-item * {
     transition: .5s;
-}
+} */
 
 .service-item:hover * {
     color: var(--light) !important;
